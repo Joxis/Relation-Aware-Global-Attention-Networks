@@ -36,16 +36,14 @@ def get_data(name, split_id, data_dir, height, width, batch_size, num_instances,
 			root=data_dir, name=dataset_name, split_id=split_id,
 			cuhk03_labeled=True, cuhk03_classic_split=False,
 		)
-		dataset.images_dir = osp.join(data_dir, '/{}/images_labeled/'.format(
-			dataset_name))
+		dataset.images_dir = '.'
 	elif name == 'cuhk03detected':
 		dataset_name = 'cuhk03'
 		dataset = data_manager.init_imgreid_dataset(
 			root=data_dir, name=dataset_name, split_id=split_id,
 			cuhk03_labeled=False, cuhk03_classic_split=False,
 		)
-		dataset.images_dir = osp.join(data_dir, '/{}/images_detected/'.format(
-			dataset_name))
+		dataset.images_dir = '.'
 	## Num. of training IDs
 	num_classes = dataset.num_train_pids
 
