@@ -74,6 +74,8 @@ def get_data(name, split_id, data_dir, height, width, batch_size, num_instances,
 		batch_size=batch_size, num_workers=workers,
 		shuffle=False, pin_memory=True)
 
+	print(len(query_loader), len(gallery_loader))
+
 	return dataset, num_classes, train_loader, query_loader, gallery_loader
 
 
