@@ -40,4 +40,4 @@ CUDA_VISIBLE_DEVICES=0 python main_imgreid.py \
 	--data-dir ${DATA_DIR} \
 	--logs-dir ${LOG_DIR} \
 	--evaluate \
-	> ${LOG_FILE_TEST} 2>&1
+	2>&1 | tee ${LOG_FILE_TEST}
