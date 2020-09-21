@@ -6,7 +6,6 @@ NAME_MODEL="resnet50_rga"
 BATCH_SIZE=64
 NUM_WORKER=8
 NUM_FEATURE=2048
-NUM_EPOCHS=1
 NUM_GPU=1
 SEED=16
 BRANCH_NAME="rgasc"
@@ -30,11 +29,8 @@ CUDA_VISIBLE_DEVICES=0 python main_imgreid.py \
 	-b ${BATCH_SIZE} \
 	-d ${NAME_DATA} \
 	-j ${NUM_WORKER} \
-	--opt adam \
-	--dropout 0 \
 	--seed ${SEED} \
 	--num_gpu ${NUM_GPU} \
-	--epochs ${NUM_EPOCHS} \
 	--features ${NUM_FEATURE} \
 	--branch_name ${BRANCH_NAME} \
 	--data-dir ${DATA_DIR} \
