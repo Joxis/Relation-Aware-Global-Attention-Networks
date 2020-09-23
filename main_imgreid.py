@@ -95,6 +95,8 @@ def main(args):
 		get_data(args.dataset, args.split, args.data_dir, args.height,
 				args.width, args.batch_size, args.num_instances, args.workers,
 				args.combine_trainval, args.rerank)
+
+	print(len(train_loader), len(query_loader), len(gallery_loader))
 	
 	## Summary Writer
 	if not args.evaluate:
