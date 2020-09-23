@@ -8,6 +8,7 @@ NUM_WORKER=8
 NUM_FEATURE=2048
 NUM_GPU=1
 SEED=16
+START_SAVE=320
 BRANCH_NAME="rgasc"
 
 DATA_DIR="./datasets"
@@ -29,6 +30,8 @@ CUDA_VISIBLE_DEVICES=0 python main_imgreid.py \
 	-b ${BATCH_SIZE} \
 	-d ${NAME_DATA} \
 	-j ${NUM_WORKER} \
+	--combine-trainval \
+	--start_save ${START_SAVE} \
 	--seed ${SEED} \
 	--num_gpu ${NUM_GPU} \
 	--features ${NUM_FEATURE} \
