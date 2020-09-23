@@ -115,7 +115,6 @@ class RGA_Branch(nn.Module):
 		
 		# Load the pre-trained model weights
 		if pretrained:
-			print("TEST")
 			self.load_specific_param(self.conv1.state_dict(), 'conv1', model_path)
 			self.load_specific_param(self.bn1.state_dict(), 'bn1', model_path)
 			self.load_partial_param(self.layer1.state_dict(), 1, model_path)
@@ -142,7 +141,6 @@ class RGA_Branch(nn.Module):
 
 	def load_partial_param(self, state_dict, model_index, model_path):
 		param_dict = torch.load(model_path)
-		print(param_dict.keys())
 		for i in state_dict:
 			key = 'layer{}.'.format(model_index)+i
 			state_dict[i].copy_(param_dict[key])
